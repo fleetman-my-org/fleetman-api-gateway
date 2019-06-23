@@ -11,12 +11,7 @@ pipeline {
    }
 
    stages {
-      stage('Preparation') {
-         steps {
-            cleanWs()
-            git credentialsId: 'GitHubId', url: "https://github.com/fleetman-my-org/fleetman-api-gateway"
-         }
-      }
+     
       stage('Build') {
          steps {
             sh '''mvn clean package'''
